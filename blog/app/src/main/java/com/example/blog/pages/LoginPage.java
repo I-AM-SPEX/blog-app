@@ -100,6 +100,14 @@ public class LoginPage extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        if(false){
+            super.onBackPressed();
+        }
+    }
+
+
     private boolean isPasswordValid() {
         String str = loginPassword.getEditText().getText().toString();
 
@@ -111,6 +119,11 @@ public class LoginPage extends AppCompatActivity {
             loginPassword.setErrorEnabled(false);
             return true;
         }
+    }
+
+    public void onGuest(View v){
+        Intent i = new Intent(this, ContentPage.class);
+        startActivity(i);
     }
 
     

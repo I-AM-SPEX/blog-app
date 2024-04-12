@@ -1,6 +1,8 @@
 package com.example.blog.models;
 
-public class ContentModel {
+import java.io.Serializable;
+
+public class    ContentModel implements Serializable {
     String title,content,authorName,date,id,time,userId,image;
 
     public String getContent() {
