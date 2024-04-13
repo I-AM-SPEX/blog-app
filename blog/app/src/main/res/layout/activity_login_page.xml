@@ -75,13 +75,16 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             app:cornerRadius="0dp"/>
+
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/guest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guest"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            app:cornerRadius="0dp"/>
+            android:onClick="onGuest"
+            android:text="Guest"
+            app:cornerRadius="0dp" />
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"

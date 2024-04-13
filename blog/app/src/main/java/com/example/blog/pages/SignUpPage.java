@@ -150,10 +150,13 @@ public class SignUpPage extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful()) {
-                        String refId = ref.push().getKey();
+                        String refId = mAuth.getCurrentUser().getUid().toString();
                         User user = new User(firstName,lastName,userName,email,password, refId);
 
                         ref.child(refId).setValue(user);
+                        Toast.makeText(SignUpPage.this, "Registration Succesfull", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(this, LoginPage.class );
+                        startActivity(i);
                     }else{
                         Toast.makeText(SignUpPage.this, "Signup Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
